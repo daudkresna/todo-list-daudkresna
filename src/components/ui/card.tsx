@@ -12,13 +12,14 @@ const Card = ({
   title: string;
   description: string | null;
   date: Date;
-  icon: any;
+  icon: IconProps["name"];
   completed: boolean;
 }) => {
-  const iconColor = icons.filter((i) => i.value === icon);
+  const iconColor = icons.filter((i) => i.value === (icon as string));
+  console.log(iconColor[0]?.color);
   return (
     <div
-      className={`p-2 border-2 border-black flex flex-col ${iconColor[0]?.color} bg-white rounded-lg -rotate-6 justify-between size-[200px] shadow-2xl`}
+      className={`p-2 border-2 border-black flex flex-col ${iconColor[0]?.color} rounded-lg -rotate-6 justify-between size-[200px] shadow-2xl`}
     >
       <div className="flex flex-col gap-2">
         <div className="flex flex-row gap-2">

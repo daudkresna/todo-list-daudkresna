@@ -1,13 +1,5 @@
-// import "next-auth";
-
-// declare module "next-auth" {
-//   interface Session {
-//     username?: string;
-//   }
-// }
-
-import { Session } from "next-auth";
-import { JWT } from "next-auth/jwt";
+import { Session } from "next-auth"; // eslint-disable-line @typescript-eslint/no-unused-vars
+import { JWT } from "next-auth/jwt"; // eslint-disable-line @typescript-eslint/no-unused-vars
 
 declare module "next-auth" {
   interface Session {

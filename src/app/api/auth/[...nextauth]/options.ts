@@ -13,7 +13,7 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        const u = user as unknown as any;
+        const u = user as unknown as any; //eslint-disable-line @typescript-eslint/no-explicit-any
         return { ...token, id: user.id, username: u.username };
       }
       return token;

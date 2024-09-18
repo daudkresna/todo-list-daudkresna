@@ -3,8 +3,8 @@ import { getServerSession } from "next-auth";
 import Link from "next/link";
 import React from "react";
 import authOptions from "./api/auth/[...nextauth]/options";
-import prisma from "./lib/prisma";
 import { Todo } from "./types/types";
+import { IconProps } from "@/components/ui/icon";
 
 const Home = async () => {
   const session = await getServerSession(authOptions);
@@ -41,11 +41,12 @@ const Home = async () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-items-center w-3/4 gap-4 text-black">
           {todos.data.map((todo: Todo) => (
             <Link href={`/todo/${todo.id}`} key={todo.id}>
+              {/* //eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               <Card
                 date={todo.createdAt}
                 description={todo.content}
                 title={todo.title}
-                icon={todo.tag}
+                icon={todo.tag as IconProps["name"]}
                 completed={todo.completed}
               />
             </Link>

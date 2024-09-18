@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { SignInButton, SignOutButton } from "./ui/auth-button";
 import Link from "next/link";
 import { useSession } from "next-auth/react";

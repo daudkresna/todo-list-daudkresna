@@ -22,6 +22,7 @@ const TodoPage = async ({ params }: { params: { id: string } }) => {
           {todo.content}
         </h3>
         <div className="flex justify-between gap-2">
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
           <Icon name={todo.tag as any} />
           <form action={completeTodo}>
             <input type="text" name="id" value={todo.id} hidden readOnly />

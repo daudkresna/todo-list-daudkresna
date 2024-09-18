@@ -4,7 +4,6 @@ import { SignInButton, SignOutButton } from "./ui/auth-button";
 import { getServerSession } from "next-auth";
 import authOptions from "@/app/api/auth/[...nextauth]/options";
 import HamburgerButton from "./ui/hamburger";
-import ResponsiveNavigation from "./responsive-nav";
 
 const NavBar = async () => {
   const session = await getServerSession(authOptions);
