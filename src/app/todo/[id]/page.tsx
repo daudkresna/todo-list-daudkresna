@@ -8,7 +8,7 @@ import React from "react";
 const TodoPage = async ({ params }: { params: { id: string } }) => {
   const session = await getServerSession(authOptions);
   const res = await fetch(
-    `http://localhost:3000/api/user/${session?.user.username}/todo/${params.id}`
+    `${process.env.BASE_URL}/user/${session?.user.username}/todo/${params.id}`
   );
   const todo: Todo = await res.json().then((data) => data.data);
   return (

@@ -16,7 +16,7 @@ const Home = async () => {
   //   },
   // });
   const res = await fetch(
-    `http://localhost:3000/api/user/${session?.user.username}/todos`,
+    `${process.env.BASE_URL}/user/${session?.user.username}/todos`,
     {
       cache: "no-store",
     }
